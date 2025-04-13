@@ -123,8 +123,7 @@ p {
 
   .about-text {
     width: 100%;
-    min-width: 0;                /* 最小幅を解除 */
-    word-break: break-word;
+    text-align: center;
   }
 
   #intro .container,
