@@ -163,6 +163,7 @@ section:first-child {
 .sns-links li a img {
   width: 32px;
   height: 32px;
+    border-radius: 20px;
 }
 
 /* ==========================
@@ -417,10 +418,5 @@ footer ul li span {
 
   .book-item {
     flex: 1 1 100%;
-  }
-
-  .sns-links ul {
-    flex-direction: column;
-    gap: 20px;
   }
 }
