@@ -255,12 +255,11 @@ footer ul li span {
   レスポンシブ（モバイル対応）
 ------------------------------ */
 @media (max-width: 768px) {
-  /* ...既存のモバイル設定... */
-
+  /* SNSアイコンを縦並びにする */
   .sns-links ul {
-    flex-direction: column; /* 横並び → 縦並びに */
+    flex-direction: column;
     gap: 20px;
-    align-items: center; /* 中央揃え */
+    align-items: center;
   }
 
   .sns-links li a {
@@ -271,10 +270,30 @@ footer ul li span {
     width: 28px;
     height: 28px;
   }
+
+/* YouTube動画のサイズをレスポンシブに */
+  section ol li iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  section ol li {
+    flex-basis: 100%; /* 横幅いっぱい使うように */
+    padding: 10px;
+  }
+
+  section ol {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  section ol li h3,
+  section ol li p {
+    padding: 0 10px;
+    text-align: center;
+  }
 }
-
-
-
 /*吹き出し*/
 .balloon_l,
 .balloon_r{
