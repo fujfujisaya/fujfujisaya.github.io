@@ -186,14 +186,12 @@ section ol {
   list-style: none;
   padding-left: 0;
 }
-
 section ol li {
-  flex: 1 1 300px;
-  max-width: 560px;
+  width: 100%;
+  max-width: 560px; /* ← ここで最大幅を指定！ */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
@@ -226,12 +224,11 @@ section ol li p {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9の比率 */
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   margin-bottom: 16px;
 }
 
-/* iframe自体を絶対位置で中に入れる */
 .youtube-wrapper iframe {
   position: absolute;
   top: 0;
@@ -241,7 +238,6 @@ section ol li p {
   border: none;
   border-radius: 10px;
 }
-
 /* iframe埋め込みのラッパー（16:9を維持） */
 .youtube-wrapper {
   position: relative;
