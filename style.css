@@ -177,6 +177,29 @@ section:first-child {
 /* ==========================
    YouTubeセクション
 ========================== */
+
+#youtube-section ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#youtube-section ol li {
+  flex: 0 1 calc(50% - 10px); /* 2列化 */
+  max-width: calc(50% - 10px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* YouTubeセクション */
 section ol {
   display: flex;
@@ -405,7 +428,7 @@ footer ul li span {
    モバイル対応
 ========================== */
 @media (max-width: 768px) {
-  section ol li {
+  #youtube-section ol li {
     flex: 0 1 100%;
     max-width: 100%;
   }
