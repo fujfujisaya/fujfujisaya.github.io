@@ -140,15 +140,25 @@ section:first-child {
   text-align: center;
   padding: 30px;
   background-color: #eeeeee;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .sns-links ul {
   display: flex;
+  flex-wrap: wrap;        /* ← 複数行に折り返し可能に */
   justify-content: center;
-  gap: 40px;
+  gap: 20px 40px;         /* ← 行と列の間隔（縦 横） */
   list-style: none;
   padding: 0;
+  margin: 0;
+  max-width: 600px;       /* 任意。中央に収める場合 */
+  margin-inline: auto;   /* ← 左右中央に配置 */
+}
+
+.sns-links li {
+  flex: 0 1 calc(33.333% - 30px); /* ← 1列に3つ収まるように調整 */
+  display: flex;
+  justify-content: center;
 }
 
 .sns-links li a {
@@ -163,7 +173,7 @@ section:first-child {
 .sns-links li a img {
   width: 32px;
   height: 32px;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* ==========================
@@ -386,7 +396,12 @@ footer {
 
 footer p {
   font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3.6rem;
+  list-style: none;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 0;
+    text-align: left;
 }
 
 footer ul {
