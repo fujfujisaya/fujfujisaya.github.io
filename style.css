@@ -128,16 +128,12 @@ section:first-child {
     text-align: center;
   }
 
-  .about-heading {
-    order: 1;
-  }
-
   .about-image {
-    order: 2;
+    margin-bottom: 20px;
   }
 
   .about-text {
-    order: 3;
     width: 100%;
   }
 }
+
