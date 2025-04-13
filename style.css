@@ -43,61 +43,23 @@ p {
 }
 
 /* ==========================
-   ヘッダー
-========================== */
-header {
-  background-color: #707070;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-header h1 {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-
-header h1 img {
-  width: 180px;
-}
-
-header p img {
-  width: 100%;
-}
-
-/* ==========================
-   セクション共通
-========================== */
-section {
-  margin: 40px auto 80px;
-  max-width: 960px;
-}
-
-section:first-child {
-  margin-top: 100px;
-}
-
-/* ==========================
    ABOUT セクション
 ========================== */
 .about .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  gap: 20px;
   background-color: #eeeeee;
   border-radius: 10px;
   padding: 30px;
-  flex-wrap: wrap;
 }
 
 .about-heading {
   font-size: 2.8rem;
   font-weight: bold;
-  width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 .about-image img {
@@ -108,9 +70,8 @@ section:first-child {
 }
 
 .about-text {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
+  width: 100%;
+  text-align: center;
 }
 
 .about-text p {
@@ -121,19 +82,22 @@ section:first-child {
 /* ==========================
    モバイル対応
 ========================== */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .about .container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
-  .about-image {
-    margin-bottom: 20px;
+  .about-heading {
+    width: auto;
+    text-align: left;
   }
 
   .about-text {
-    width: 100%;
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
   }
 }
-
