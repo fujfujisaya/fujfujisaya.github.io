@@ -177,51 +177,25 @@ section:first-child {
 /* ==========================
    YouTubeセクション
 ========================== */
-
-#youtube-section ol {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#youtube-section ol li {
-  flex: 0 1 calc(50% - 10px); /* 2列化 */
-  max-width: calc(50% - 10px);
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* YouTubeセクション */
 section ol {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  gap: 40px;
   list-style: none;
   padding-left: 0;
-  margin: 0 auto;
-  max-width: 960px;
 }
-
 section ol li {
-  flex: 0 1 calc(50% - 10px); /* 2列にするための幅 */
-  max-width: calc(50% - 10px);
+  width: 100%;
+  max-width: 560px; /* ← ここで最大幅を指定！ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* YouTube埋め込みサイズを16:9で維持 */
@@ -249,7 +223,7 @@ section ol li p {
 .youtube-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* 16:9の比率 */
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 16px;
@@ -262,8 +236,8 @@ section ol li p {
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 10px;
 }
-
 /* iframe埋め込みのラッパー（16:9を維持） */
 .youtube-wrapper {
   position: relative;
@@ -428,11 +402,12 @@ footer ul li span {
    モバイル対応
 ========================== */
 @media (max-width: 768px) {
-  #youtube-section ol li {
-    flex: 0 1 100%;
-    max-width: 100%;
+  .about .container,
+  .stamp-card,
+  .book-list {
+    flex-direction: column;
+    align-items: center;
   }
-}
 
   .about-text {
     text-align: center;
