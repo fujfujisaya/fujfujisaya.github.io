@@ -255,19 +255,24 @@ footer ul li span {
   レスポンシブ（モバイル対応）
 ------------------------------ */
 @media (max-width: 768px) {
-  .about .container {
-    flex-direction: column;
-    text-align: center;
+  /* ...既存のモバイル設定... */
+
+  .sns-links ul {
+    flex-direction: column; /* 横並び → 縦並びに */
+    gap: 20px;
+    align-items: center; /* 中央揃え */
   }
 
-  .about-text {
-    min-width: unset;
+  .sns-links li a {
+    font-size: 1.6rem;
   }
 
-  .about-image img {
-    margin-bottom: 20px;
+  .sns-links li a img {
+    width: 28px;
+    height: 28px;
   }
 }
+
 
 
 /*吹き出し*/
