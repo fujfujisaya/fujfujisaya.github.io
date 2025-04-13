@@ -54,37 +54,28 @@
   </section>
 
   <!-- YouTube埋め込み -->
-  <section>
-    <h2>Recommended YouTube</h2>
-    <ol>
-  <li>
-    <div class="youtube-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/BLtqX7FVq_s?si=dXN4QB80cW9iIS-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<section class="youtube-section">
+  <h2>Recommended YouTube</h2>
+  <div class="youtube-slider-container">
+    <button class="scroll-btn left" onclick="scrollYoutube('left')">←</button>
+    <div class="youtube-slider">
+      <div class="youtube-card">
+        <iframe src="https://www.youtube.com/embed/BLtqX7FVq_s" title="YouTube video" allowfullscreen></iframe>
+        <h3>【知らないと危険】資格剥奪の可能性？</h3>
+      </div>
+      <div class="youtube-card">
+        <iframe src="https://www.youtube.com/embed/3dAJXvedRfc" title="YouTube video" allowfullscreen></iframe>
+        <h3>【損する】自宅でできる練習方法</h3>
+      </div>
+      <div class="youtube-card">
+        <iframe src="https://www.youtube.com/embed/9wjhQo8ax8Q" title="YouTube video" allowfullscreen></iframe>
+        <h3>【保存版】空撮案件の単価解説</h3>
+      </div>
     </div>
-    <h3>【知らないと危険】違反で資格剥奪の可能性も？<br>行政処分制度を解説</h3>
-  </li>
-  <li>
-    <div class="youtube-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/3dAJXvedRfc?si=KFtsRcgzjxh7Hd2H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <h3>【知らないと損する】自宅でできるドローン練習方法！<br>国家資格版</h3>
-  </li>
-  <li>
-    <div class="youtube-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/9wjhQo8ax8Q?si=UazhYpUxzKatKuaW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <h3>【保存版】空撮案件っていくらなの？<br>単価の決め方を解説！</h3>
-  </li>
-    </ol>
-  </section>
+    <button class="scroll-btn right" onclick="scrollYoutube('right')">→</button>
+  </div>
+</section>
 
-  <!-- 地図セクション -->
-  <section class="map-section">
-    <h2>Company location</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9790301433427!2d139.75991767506054!3d35.67751833017913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfa81d85769%3A0x1eae1373f7bfa0d0!2z5paw5p2x5Lqs44OT44Or!5e0!3m2!1sja!2sjp!4v1744510845771!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </section>
 
   <!-- LINEスタンプ紹介 -->
   <section class="line-stamp">
@@ -146,6 +137,18 @@
       </ul>
     </div>
   </footer>
+<script>
+  function scrollYoutube(direction) {
+    const slider = document.querySelector('.youtube-slider');
+    const scrollAmount = 340;
+
+    if (direction === 'left') {
+      slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+</script>
 
 </body>
 
