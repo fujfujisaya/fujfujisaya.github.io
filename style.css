@@ -177,7 +177,6 @@ section:first-child {
 /* ==========================
    YouTubeセクション
 ========================== */
-/* YouTubeセクション */
 section ol {
   display: flex;
   flex-wrap: wrap;
@@ -188,7 +187,7 @@ section ol {
 }
 section ol li {
   width: 100%;
-  max-width: 560px; /* ← ここで最大幅を指定！ */
+  max-width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,7 +197,6 @@ section ol li {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* YouTube埋め込みサイズを16:9で維持 */
 section ol li iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -206,7 +204,6 @@ section ol li iframe {
   margin-bottom: 16px;
 }
 
-/* タイトル・説明文の整え */
 section ol li h3 {
   font-size: 1.8rem;
   margin-bottom: 8px;
@@ -219,36 +216,15 @@ section ol li p {
   text-align: center;
 }
 
-/* iframe埋め込みのラッパー（16:9を維持） */
 .youtube-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9の比率 */
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
-
-.youtube-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
-/* iframe埋め込みのラッパー（16:9を維持） */
-.youtube-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9の比率 */
+  padding-top: 56.25%;
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 16px;
 }
 
-/* iframe自体を絶対位置で中に入れる */
 .youtube-wrapper iframe {
   position: absolute;
   top: 0;
@@ -402,6 +378,24 @@ footer ul li span {
    モバイル対応
 ========================== */
 @media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+
   .about .container,
   .stamp-card,
   .book-list {
@@ -413,12 +407,43 @@ footer ul li span {
     text-align: center;
   }
 
+  .about-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .stamp-card img {
+    width: 180px;
+  }
+
   .book-item {
     flex: 1 1 100%;
+  }
+
+  .book-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .book-item p {
+    font-size: 1.2rem;
   }
 
   .sns-links ul {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .stamp-button,
+  .book-button {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+  }
+
+  footer p {
+    font-size: 2.4rem;
+  }
+
+  footer ul {
+    font-size: 1.4rem;
   }
 }
