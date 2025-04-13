@@ -165,19 +165,35 @@ section:first-child {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+.sns-links li {
+  flex: 0 0 calc(50% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0 10px;
+}
+
 .sns-links li a {
   display: flex;
-  align-items: center;
+  align-items: center;        /* ← 縦方向に中央揃え */
   gap: 10px;
   font-size: 1.8rem;
   text-decoration: none;
   color: #333;
+  line-height: 1;
+  height: 100%;               /* liと同じ高さに */
 }
 
 .sns-links li a img {
   width: 32px;
   height: 32px;
   border-radius: 10px;
+  object-fit: cover;          /* ← 中身が潰れない */
+  display: block;             /* ← inline-blockの余白防止 */
 }
 
 
