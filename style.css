@@ -145,20 +145,24 @@ section:first-child {
 
 .sns-links ul {
   display: flex;
-  flex-wrap: wrap;        /* ← 複数行に折り返し可能に */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px 40px;         /* ← 行と列の間隔（縦 横） */
+  gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 0;
-  max-width: 600px;       /* 任意。中央に収める場合 */
-  margin-inline: auto;   /* ← 左右中央に配置 */
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .sns-links li {
-  flex: 0 1 calc(33.333% - 30px); /* ← 1列に3つ収まるように調整 */
+  flex: 0 0 calc(50% - 20px); /* 2列に均等配置 */
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 80px;               /* ★ 高さをそろえる */
+  background-color: white;    /* （任意）枠をわかりやすく */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .sns-links li a {
@@ -175,6 +179,7 @@ section:first-child {
   height: 32px;
   border-radius: 10px;
 }
+
 
 /* ==========================
    YouTubeセクション
