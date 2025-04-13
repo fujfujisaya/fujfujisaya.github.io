@@ -2,7 +2,7 @@
    基本設定
 ========================== */
 html {
-  font-size: 62.5%;
+  font-size: 30.5%;
 }
 
 *, *::before, *::after {
@@ -110,10 +110,6 @@ section:first-child {
   margin-bottom: 10px;
 }
 
-.about-text p {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
-}
 
 /* ==========================
    自己紹介セクション
