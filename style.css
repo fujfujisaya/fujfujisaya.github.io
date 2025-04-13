@@ -177,18 +177,50 @@ section:first-child {
 /* ==========================
    YouTubeセクション
 ========================== */
+/* YouTubeセクション */
 section ol {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
   padding-left: 0;
 }
 
 section ol li {
-  flex-basis: 450px;
-  list-style: none;
+  flex: 1 1 300px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+/* YouTube埋め込みサイズを16:9で維持 */
+section ol li iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* タイトル・説明文の整え */
+section ol li h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+section ol li p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 
 /* ==========================
    地図セクション
