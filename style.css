@@ -542,9 +542,9 @@ footer ul li span {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  height: 100%;            /* 高さ自動調整 */
 }
+
 
 
 .book-item img {
@@ -564,20 +564,24 @@ footer ul li span {
   font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  flex-grow: 1; /* 説明文が短くてもスペースを埋めてボタンを下に */
+  flex-grow: 1;  /* ← 説明文が短くても高さ揃える */
 }
+
 
 
 .book-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00c300; /* LINEと同じカラー */
+  background-color: #00c300;
   color: #fff;
   text-decoration: none;
   font-size: 1.4rem;
   border-radius: 30px;
   transition: background-color 0.3s;
+
+  margin-top: auto;  /* 👈 ボタンを一番下に固定する魔法 */
 }
+
 
 .book-button:hover {
   background-color: #009e00;
