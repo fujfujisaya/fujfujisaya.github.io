@@ -138,7 +138,9 @@ section:first-child {
 ========================== */
 .sns-links {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px;
+  background-color: #eeeeee;
+    border-radius: 10px;
 }
 
 .sns-links ul {
@@ -209,6 +211,8 @@ section ol li p {
 }
 
 /* iframe埋め込みのラッパー（16:9を維持） */
+
+
 .youtube-wrapper {
   position: relative;
   width: 100%;
@@ -216,6 +220,7 @@ section ol li p {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 16px;
+    
 }
 
 .youtube-wrapper iframe {
@@ -226,31 +231,28 @@ section ol li p {
   height: 100%;
   border: none;
   border-radius: 10px;
-}
-/* iframe埋め込みのラッパー（16:9を維持） */
-.youtube-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9の比率 */
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 16px;
+      background-color: #eeeeee;
+    border-radius: 10px;
 }
 
-/* iframe自体を絶対位置で中に入れる */
-.youtube-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.Recommended-YouTube {
+  text-align: center;
+  padding: 30px;
+  background-color: #eeeeee;
   border-radius: 10px;
 }
 
 /* ==========================
    地図セクション
 ========================== */
+
+.map-section {
+  text-align: center;
+  padding: 30px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
 .map-container iframe {
   width: 100%;
   height: 200px;
@@ -262,7 +264,7 @@ section ol li p {
 .line-stamp {
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 60px 20px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -313,7 +315,7 @@ section ol li p {
 .books {
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 60px 20px;
+  padding: 30px;
   text-align: center;
 }
 
