@@ -549,8 +549,8 @@ footer ul li span {
 
 .book-item img {
   width: 100%;
-  max-width: 200px;
-  height: 350px;
+  max-width: auto;
+  height: auto;
   margin: 0 auto 16px;
   display: block;
 }
