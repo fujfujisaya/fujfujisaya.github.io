@@ -1,11 +1,11 @@
-/* ==========================
-   基本設定
-========================== */
+/* ------------------------------
+  基本設定
+------------------------------ */
 html {
   font-size: 62.5%;
 }
 
-*, *::before, *::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,10 +17,13 @@ body {
   padding: 40px;
 }
 
-img, iframe {
+/* ------------------------------
+  共通要素
+------------------------------ */
+img,
+iframe {
   vertical-align: bottom;
   width: 100%;
-  height: auto;
 }
 
 h2 {
@@ -31,9 +34,12 @@ h2 {
   text-align: center;
 }
 
+section#intro h2 {
+  margin-bottom: 20px; /* ← お好みで 10〜30px 程度に */
+}
+
 h3 {
   font-size: 2rem;
-  margin-bottom: 10px;
 }
 
 p {
@@ -42,53 +48,141 @@ p {
   margin-bottom: 60px;
 }
 
-/* ==========================
-   ヘッダー
-========================== */
+/* ------------------------------
+  ヘッダー
+------------------------------ */
 header {
   background-color: #707070;
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
 }
 
 header h1 {
   height: 60px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  margin: 0;
+  padding-left: 20px; /* ← ここで調整 */
 }
 
 header h1 img {
   width: 180px;
+  height: auto;
+}
+
+header p {
+  margin-top: 0;
 }
 
 header p img {
   width: 100%;
 }
 
-/* ==========================
-   セクション共通
-========================== */
+/* ------------------------------
+  セクション共通
+------------------------------ */
 section {
-  margin: 40px auto 80px;
+  margin: 40px auto 0;
   max-width: 960px;
+  margin-bottom: 80px;  /* ← グレー背景全体の下に余白を追加 */
 }
 
 section:first-child {
-  margin-top: 100px;
+  margin: 100px auto 0;
 }
 
-/* ==========================
-   ABOUT セクション
-========================== */
+section ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-left: 0;
+}
+
+section ol li {
+  flex-basis: 450px;
+  list-style-type: none;
+}
+
+#intro .container {
+  max-width: 1000px;
+  margin: 0 auto 40px; /* ← 80px → 40px に変更 */
+  padding: 30px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  overflow: visible;
+  display: block;
+  height: auto;
+}
+
+
+
+#intro .syoukai {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* ↓ おすすめ投稿とぶつからないよう下にスペース */
+  margin-bottom: 40px;
+}
+
+
+
+#intro .syoukai img {
+  width: 100%;          /* 幅いっぱいに広げる（親要素の80%に依存） */
+  max-width: 600px;     /* 最大サイズを指定してバランスを取る */
+  height: auto;         /* 縦横比を保つ */
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+
+#intro .syoukai p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+#intro .business {
+  background-color: #d3eafe;
+  padding: 10px;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: left;
+  max-width: 80%;      /* ← 横幅制限 */
+  margin: 0 auto;      /* ← 中央揃え */
+}
+
+#intro .business p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#intro .business ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+  ABOUT セクション
+------------------------------ */
 .about .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
   background-color: #eeeeee;
   border-radius: 10px;
-  padding: 30px;
+}
+
+.about-image {
+  display: flex;
+  align-items: center;
 }
 
 .about-image img {
@@ -96,14 +190,15 @@ section:first-child {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
 }
 
 .about-text {
   flex: 1;
   min-width: 300px;
   text-align: left;
+  word-break: break-word; /* ← これを追加 */
 }
-
 .about-text h2 {
   font-size: 2.8rem;
   font-weight: bold;
@@ -115,48 +210,150 @@ section:first-child {
   margin-bottom: 16px;
 }
 
-/* ==========================
-   自己紹介セクション
-========================== */
-#intro .container {
-  background-color: #eeeeee;
-  padding: 30px;
-  border-radius: 10px;
-}
 
-#intro .syoukai {
-  text-align: center;
+
+
+/* ------------------------------
+  フッター
+------------------------------ */
+footer {
+  background-color: #707070;
+  color: #ffffff;
+  max-width: 1280px;
+  height: 360px;
+  margin: 100px auto 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
+  justify-content: center;
 }
 
-#intro .syoukai img {
-  max-width: 600px;
-  border-radius: 8px;
-  margin-bottom: 16px;
+footer p,
+footer ul {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
-#intro .syoukai p {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
+footer p {
+  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  font-size: 3.6rem;
+}
+
+footer ul {
+  list-style-type: none;
+  font-size: 1.8rem;
   line-height: 1.6;
+  margin-top: 16px;
 }
 
-/* ==========================
-   SNSリンク
-========================== */
+footer ul li span {
+  margin-right: 16px;
+}
+
+/* ------------------------------
+  レスポンシブ（モバイル対応）
+------------------------------ */
+@media (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    min-width: unset;
+  }
+
+  .about-image img {
+    margin-bottom: 20px;
+  }
+}
+
+
+/*吹き出し*/
+.balloon_l,
+.balloon_r{
+  margin: 30px 0;
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start; /*縦位置を上揃え*/
+/*   align-items: center; */ /*縦位置を真ん中揃え*/
+}
+.balloon_r{
+  justify-content:flex-end;
+}
+.faceicon img{
+  width: 80px; /*任意のサイズ*/
+  height: auto;
+}
+.balloon_r .faceicon{
+  margin-left:25px;
+}
+.balloon_l .faceicon{
+  margin-right:25px;
+}
+.balloon_r .faceicon{
+  order:2 !important;
+}
+.says {
+  max-width:500px; /*最大幅は任意*/
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 17px 13px 15px 18px;
+  border-radius: 12px;
+  background: #99dddd;/*色は任意*/
+  box-sizing:border-box;
+  margin:0 !important;
+  line-height:1.5;
+/*   align-items: center; */
+}
+.says p{
+  margin:8px 0 0 !important; 
+}
+.says p:first-child{
+  margin-top:0 !important;
+}
+.says:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+/*   margin-top:-3px;  */
+}
+.balloon_l .says:after {
+  left: -26px;
+  border-right: 22px solid #99dddd;
+}
+.balloon_r .says:after {
+  right: -26px;
+  border-left: 22px solid #99dddd;
+}
+
+.faceicon img{
+  width: 80px; /*任意のサイズ*/
+  height: auto;
+}
+.balloon_r .faceicon{
+  margin-left:25px;
+}
+.balloon_l .faceicon{
+  margin-right:25px;
+}
+.balloon_r .faceicon{
+  order:2 !important;
+}
+
 .sns-links {
-  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 40px 20px;
+  text-align: center;
 }
 
 .sns-links ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 40px;
-  list-style: none;
   padding: 0;
 }
 
@@ -164,8 +361,8 @@ section:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.8rem;
   text-decoration: none;
+  font-size: 1.8rem;
   color: #333;
 }
 
@@ -174,122 +371,52 @@ section:first-child {
   height: 32px;
 }
 
-/* ==========================
-   YouTubeセクション
-========================== */
-/* YouTubeセクション */
-section ol {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  list-style: none;
-  padding-left: 0;
-}
-section ol li {
-  width: 100%;
-  max-width: 560px; /* ← ここで最大幅を指定！ */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.map-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* YouTube埋め込みサイズを16:9で維持 */
-section ol li iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  margin-bottom: 16px;
-}
-
-/* タイトル・説明文の整え */
-section ol li h3 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-section ol li p {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* iframe埋め込みのラッパー（16:9を維持） */
-.youtube-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9の比率 */
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
-
-.youtube-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
-/* iframe埋め込みのラッパー（16:9を維持） */
-.youtube-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9の比率 */
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 16px;
-}
-
-/* iframe自体を絶対位置で中に入れる */
-.youtube-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
-
-/* ==========================
-   地図セクション
-========================== */
 .map-container iframe {
   width: 100%;
   height: 450px;
   border: none;
+  display: block;
 }
 
-/* ==========================
-   LINEスタンプセクション
-========================== */
+.map-section {
+  margin-bottom: 80px;  /* 👈← これが重要！ */
+}
+
+
 .line-stamp {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 20px;
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 60px 20px;
   text-align: center;
+}
+
+.line-stamp h2 {
+  font-size: 3.2rem;
+  margin-bottom: 30px;
 }
 
 .stamp-card {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
   gap: 30px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .stamp-card img {
   width: 250px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .stamp-text {
@@ -297,13 +424,24 @@ section ol li p {
   text-align: left;
 }
 
+.stamp-text h3 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.stamp-text p {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
 .stamp-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #00c300;
+  background-color: #00c300; /* LINEカラー */
   color: white;
-  border-radius: 30px;
   font-size: 1.6rem;
+  border-radius: 30px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
@@ -312,31 +450,109 @@ section ol li p {
   background-color: #009e00;
 }
 
-/* ==========================
-   書籍紹介
-========================== */
+.affiliate-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 1em auto;
+}
+
+.affiliate-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.affiliate-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.affiliate-content {
+  padding: 10px 12px;
+  background-color: #fff;
+}
+
+.affiliate-content h4 {
+  font-size: 14px;
+  margin: 0 0 5px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.affiliate-content .price {
+  color: #e60033;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.affiliate-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.book-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0077cc; /* 書籍用カラー */
+  color: white;
+  font-size: 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: #005fa3;
+}
+
 .books {
+  max-width: 960px;
+  margin: 100px auto; /* ← LINEスタンプとの余白追加 */
+  padding: 60px 20px;
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 60px 20px;
   text-align: center;
+}
+
+.books h2 {
+  font-size: 3.2rem;
+  margin-bottom: 40px;
 }
 
 .book-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .book-item {
   flex: 1 1 calc(33.333% - 20px);
   background-color: white;
-  border-radius: 10px;
   padding: 20px;
+  border-radius: 10px;
+  text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
   display: flex;
   flex-direction: column;
+  height: 100%;            /* 高さ自動調整 */
+}
+
+
+
+.book-item img {
+  width: 100%;
+  max-width: auto;
+  height: auto;
+  margin: 0 auto 16px;
+  display: block;
 }
 
 .book-item h3 {
@@ -346,9 +562,12 @@ section ol li p {
 
 .book-item p {
   font-size: 1.4rem;
+  line-height: 1.6;
   margin-bottom: 20px;
-  flex-grow: 1;
+  flex-grow: 1;  /* ← 説明文が短くても高さ揃える */
 }
+
+
 
 .book-button {
   display: inline-block;
@@ -359,66 +578,11 @@ section ol li p {
   font-size: 1.4rem;
   border-radius: 30px;
   transition: background-color 0.3s;
-  margin-top: auto;
+
+  margin-top: auto;  /* 👈 ボタンを一番下に固定する魔法 */
 }
+
 
 .book-button:hover {
   background-color: #009e00;
-}
-
-/* ==========================
-   フッター
-========================== */
-footer {
-  background-color: #707070;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-footer p {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3.6rem;
-}
-
-footer ul {
-  list-style: none;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-top: 16px;
-  padding: 0;
-}
-
-footer ul li span {
-  margin-right: 16px;
-}
-
-/* ==========================
-   モバイル対応
-========================== */
-@media (max-width: 768px) {
-  .about .container,
-  .stamp-card,
-  .book-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .book-item {
-    flex: 1 1 100%;
-  }
-
-  .sns-links ul {
-    flex-direction: column;
-    gap: 20px;
-  }
 }
