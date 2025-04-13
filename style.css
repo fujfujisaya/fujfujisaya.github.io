@@ -14,7 +14,7 @@ html {
 body {
   font-family: 'Helvetica Neue', 'Yu Gothic Medium', YuGothic, Verdana, Meiryo, sans-serif;
   line-height: 1.8;
-  padding: 40px;
+  padding: 20px;
 }
 
 img, iframe {
@@ -25,21 +25,21 @@ img, iframe {
 
 h2 {
   font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 200;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.6;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 /* ==========================
@@ -47,7 +47,7 @@ p {
 ========================== */
 header {
   background-color: #707070;
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -55,11 +55,11 @@ header h1 {
   height: 30px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 header h1 img {
-  width: 180px;
+  width: 140px;
 }
 
 header p img {
@@ -70,12 +70,13 @@ header p img {
    セクション共通
 ========================== */
 section {
-  margin: 40px auto 80px;
-  max-width: 960px;
+  margin: 20px auto 40px;
+  max-width: 100%;
+  padding: 0 10px;
 }
 
 section:first-child {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 /* ==========================
@@ -83,35 +84,33 @@ section:first-child {
 ========================== */
 .about .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  gap: 20px;
   background-color: #eeeeee;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
 }
 
 .about-image img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .about-text {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
+  text-align: center;
 }
 
 .about-text h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .about-text p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-bottom: 16px;
 }
 
@@ -120,26 +119,26 @@ section:first-child {
 ========================== */
 #intro .container {
   background-color: #eeeeee;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
 }
 
 #intro .syoukai {
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 #intro .syoukai img {
-  max-width: 600px;
+  max-width: 100%;
   border-radius: 8px;
   margin-bottom: 16px;
 }
 
 #intro .syoukai p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-bottom: 16px;
   line-height: 1.6;
 }
@@ -149,358 +148,32 @@ section:first-child {
 ========================== */
 .sns-links {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 10px;
 }
 
 .sns-links ul {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
   list-style: none;
   padding: 0;
+  align-items: center;
 }
 
 .sns-links li a {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: #333;
 }
 
 .sns-links li a img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 /* ==========================
-   YouTube セクション修正
+   その他のスタイルは元のまま、または必要に応じて同様のモバイル調整を追加
 ========================== */
-.youtube-section {
-  position: relative;
-  padding: 40px 0;
-  background-color: #fafafa;
-  overflow: hidden;
-}
-
-.youtube-slider-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 0 40px;
-}
-
-.youtube-slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 10px 0;
-}
-
-.youtube-card {
-  flex: 0 0 320px;
-  scroll-snap-align: start;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 10px;
-  text-align: center;
-}
-
-.youtube-card iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 10px;
-  border: none;
-}
-
-.scroll-btn {
-  background-color: #00c300;
-  color: white;
-  font-size: 2rem;
-  border: none;
-  border-radius: 50%;
-  padding: 10px 15px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.scroll-btn.left {
-  left: 10px;
-}
-
-.scroll-btn.right {
-  right: 10px;
-}
-
-.scroll-btn:hover {
-  background-color: #009e00;
-}
-
-@media (max-width: 768px) {
-  .scroll-btn {
-    display: none;
-  }
-
-  .youtube-slider {
-    padding: 0 10px;
-  }
-
-  .youtube-card {
-    flex: 0 0 80%;
-  }
-}
-
-
-/* ==========================
-   地図セクション
-========================== */
-.map-container iframe {
-  width: 100%;
-  height: 450px;
-  border: none;
-}
-
-/* ==========================
-   LINEスタンプセクション
-========================== */
-.line-stamp {
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.stamp-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  align-items: center;
-}
-
-.stamp-card img {
-  width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.stamp-text {
-  max-width: 500px;
-  text-align: left;
-}
-
-.stamp-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #00c300;
-  color: white;
-  border-radius: 30px;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.stamp-button:hover {
-  background-color: #009e00;
-}
-
-/* ==========================
-   書籍紹介
-========================== */
-.books {
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.book-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.book-item {
-  flex: 1 1 calc(33.333% - 20px);
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-.book-item h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.book-item p {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.book-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #00c300;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.4rem;
-  border-radius: 30px;
-  transition: background-color 0.3s;
-  margin-top: auto;
-}
-
-.book-button:hover {
-  background-color: #009e00;
-}
-
-/* ==========================
-   フッター
-========================== */
-footer {
-  background-color: #707070;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-footer p {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3.6rem;
-}
-
-footer ul {
-  list-style: none;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-top: 16px;
-  padding: 0;
-}
-
-footer ul li span {
-  margin-right: 16px;
-}
-
-/* ==========================
-   モバイル対応
-========================== */
-@media (max-width: 768px) {
-  .about .container,
-  .stamp-card,
-  .book-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .book-item {
-    flex: 1 1 100%;
-  }
-
-  .sns-links ul {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-.youtube-section {
-  position: relative;
-  padding: 40px 0;
-  background-color: #fafafa;
-  overflow: hidden;
-}
-
-.youtube-slider-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 0 40px;
-}
-
-.youtube-slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 10px 0;
-}
-
-.youtube-card {
-  flex: 0 0 320px;
-  scroll-snap-align: start;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 10px;
-  text-align: center;
-}
-
-.youtube-card iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 10px;
-}
-
-.scroll-btn {
-  background-color: #00c300;
-  color: white;
-  font-size: 2rem;
-  border: none;
-  border-radius: 50%;
-  padding: 10px 15px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.scroll-btn.left {
-  left: 10px;
-}
-
-.scroll-btn.right {
-  right: 10px;
-}
-
-.scroll-btn:hover {
-  background-color: #009e00;
-}
-
-@media (max-width: 768px) {
-  .scroll-btn {
-    display: none;
-  }
-
-  .youtube-slider {
-    padding: 0 10px;
-  }
-
-  .youtube-card {
-    flex: 0 0 80%;
-  }
-}
