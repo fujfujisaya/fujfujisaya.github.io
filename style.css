@@ -53,7 +53,7 @@ header {
 }
 
 header h1 {
-  height: auto;
+  height: 30px auto;
   display: flex;
   align-items: center;
   padding-left: 20px;
