@@ -359,7 +359,7 @@ section ol li p {
 }
 
 .book-item {
-  flex: 0 0 calc(50% - 10px); /* ★ 2列に収まるように調整 */
+  flex: 0 0 calc(33.33333% - 30px); /* ★ 2列に収まるように調整 */
   background-color: white;
   border-radius: 10px;
   padding: 20px;
