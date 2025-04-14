@@ -370,7 +370,16 @@ section ol li p {
 
 
 .book-item img {
-    height: 300px;
+  width: 250px;
+  height: 300px;
+}
+
+/* スマホ向けサイズ（画面幅768px以下） */
+@media (max-width: 768px) {
+  .book-item img {
+    width: 100px;   /* ← 100px小さい */
+    height: 150px;  /* ← 100px小さい */
+  }
 }
 
 .book-item h3 {
