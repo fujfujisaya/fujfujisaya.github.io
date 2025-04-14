@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Helvetica Neue', 'Yu Gothic Medium', YuGothic, Verdana, Meiryo, sans-serif;
   line-height: 1.8;
   padding: 40px;
 }
@@ -165,7 +165,17 @@ section:first-child {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-
+.sns-links li {
+  flex: 0 0 calc(50% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0 10px;
+}
 
 .sns-links li a {
   display: flex;
@@ -450,57 +460,5 @@ footer ul li span {
 
   .book-item {
     flex: 1 1 100%;
-  }
-}
-/* ==========================
-   レスポンシブ調整
-========================== */
-@media (max-width: 600px) {
-  body {
-    padding: 20px;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  h3 {
-    font-size: 1.6rem;
-  }
-
-  p {
-    font-size: 1.6rem;
-  }
-
-  header h1 img {
-    width: 140px;
-  }
-
-  .about .container,
-  .stamp-card,
-  .book-list,
-  .sns-links ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text,
-  .stamp-text,
-  .book-item {
-    text-align: center;
-    flex: 1 1 100%;
-  }
-
-  .sns-links li {
-    width: 100%;
-  }
-
-  .book-item {
-    flex: 0 0 100%;
-  }
-
-  iframe {
-    width: 100%;
-    height: auto;
   }
 }
