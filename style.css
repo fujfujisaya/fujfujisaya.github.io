@@ -25,10 +25,21 @@ img, iframe {
 
 h2 {
   font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* スマホ向けサイズ（画面幅768px以下） */
+@media (max-width: 768px) {
+  h2 {
+  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 10px;
   text-align: center;
+  }
 }
 
 h3 {
@@ -37,10 +48,19 @@ h3 {
 }
 
 p {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  p {
   font-size: 2rem;
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: left;
+  }
 }
 
 /* ==========================
@@ -92,15 +112,25 @@ section:first-child {
   justify-content: center;
   gap: 40px;
   background-color: #eeeeee;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 30px;
 }
 
 .about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* スマホ向けサイズ（画面幅768px以下） */
+@media (max-width: 768px) {
+  .about-image img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  }
 }
 
 .about-text {
@@ -116,7 +146,7 @@ section:first-child {
 #intro .container {
   background-color: #eeeeee;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 #intro .syoukai {
@@ -384,6 +414,7 @@ section ol li p {
     height: 200px;  /* ← 100px小さい */
   }
 }
+
 
 .book-item h3 {
   font-size: 1.8rem;
