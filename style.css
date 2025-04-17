@@ -45,6 +45,7 @@ h2 {
 h3 {
   font-size: 2rem;
   margin-bottom: 10px;
+    text-align: center;
 }
 
 p {
@@ -72,6 +73,7 @@ header {
   margin: 0 auto;
 }
 
+
 header h1 {
   height: 30px;
   display: flex;
@@ -83,12 +85,18 @@ header h1 {
 }
 
 
-header h1 img {
-  width: 180px;
+header ima {
+  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 0;
+    text-align: left;
 }
 
 header p img {
-  width: 100%;
+ width: 1280px;
 }
 
 /* ==========================
@@ -149,6 +157,26 @@ section:first-child {
   border-radius: 30px;
 }
 
+
+#intro .syoukai p {
+    margin-top: 20px;
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+    margin-left:80px;
+    margin-right: 80px;
+}
+
+#intro .syoukai p2 {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
+    margin-left:80px;
+    margin-right: 80px;
+}
+
 #intro .syoukai {
   text-align: left;
   display: flex;
@@ -159,6 +187,7 @@ section:first-child {
 
 #intro .syoukai img {
   max-width: 600px;
+    max-width: 500px
   border-radius: 8px;
   margin-bottom: 16px;
 }
@@ -185,22 +214,11 @@ section:first-child {
 }
 
 .sns-links li {
-  flex: 0 0 calc(50% - 20px); /* 2列に均等配置 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;               /* ★ 高さをそろえる */
-  background-color: white;    /* （任意）枠をわかりやすく */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.sns-links li {
   flex: 0 0 calc(50% - 20px);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 50px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -219,8 +237,8 @@ section:first-child {
 }
 
 .sns-links li a img {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   border-radius: 10px;
   object-fit: cover;          /* ← 中身が潰れない */
   display: block;             /* ← inline-blockの余白防止 */
@@ -231,17 +249,18 @@ section:first-child {
    YouTubeセクション
 ========================== */
 /* YouTubeセクション */
+
 section ol {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between; /* ← ここもcenterから変更推奨 */
+  gap: 20px;
   list-style: none;
   padding-left: 0;
 }
+
 section ol li {
-  width: 100%;
-  max-width: 560px; /* ← ここで最大幅を指定！ */
+  width: 48%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,6 +269,13 @@ section ol li {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+@media (max-width: 768px) {
+  section ol li {
+    width: 100%;
+  }
+}
+
 
 /* YouTube埋め込みサイズを16:9で維持 */
 section ol li iframe {
@@ -281,8 +307,7 @@ section ol li p {
   padding-top: 56.25%; /* 16:9の比率 */
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 16px;
-    
+  margin-bottom: 15px;
 }
 
 .youtube-wrapper iframe {
@@ -330,6 +355,12 @@ section ol li p {
   text-align: center;
 }
 
+.line-stamp h3{
+    margin-left: 40px;
+margin-right: 40px;
+    margin-bottom: 30px;
+}
+
 .stamp-card {
   display: flex;
   flex-wrap: wrap;
@@ -356,7 +387,7 @@ section ol li p {
   display: inline-block;
   margin: 0 auto;
   padding: 12px 24px;
-  background-color: #00c300;
+  background-color: #000000;
   color: white;
   border-radius: 30px;
   font-size: 1.6rem;
@@ -364,9 +395,8 @@ section ol li p {
   transition: background-color 0.3s;
 }
 
-
 .stamp-button:hover {
-  background-color: #009e00;
+  background-color: #000000;
 }
 
 
@@ -395,6 +425,7 @@ section ol li p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+    align-items: center; 
     
 }
 
@@ -430,17 +461,20 @@ section ol li p {
 .book-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00c300;
+  background-color: #000000;
   color: #fff;
   text-decoration: none;
   font-size: 2.5rem;
   border-radius: 30px;
   transition: background-color 0.3s;
   margin-top: auto;
+    max-height: 50px;
+    max-width: 180px;
+    
 }
 
 .book-button:hover {
-  background-color: #009e00;
+  background-color: #000000;
 }
 
 /* ==========================
@@ -505,3 +539,148 @@ footer ul li span {
     flex: 1 1 100%;
   }
 }
+
+
+h5 {
+  border-bottom: solid 3px #a9a9a9;
+  position: relative;
+          font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+          font-size: 4rem;
+  font-weight: 400;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #000000;
+  bottom: -3px;
+  width: 20%;
+}
+
+
+
+/* 複数画像切り替え---------------------------------------------- */
+.slider-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+     max-width: 1280px;
+}
+
+.slideimg {
+  position: absolute;
+  inset: 0;/*親要素内にフルサイズで配置*/
+  opacity: 0;
+  background-size: cover;/* 画像をスライド全体にカバー */
+  animation: slideAnime 15s infinite; /* 15秒で1サイクル */
+}
+
+@keyframes slideAnime {
+  0%, 30%, 100% { opacity: 0; }/* スライドの非表示タイミング */
+  10%, 20% { opacity: 1; }/* スライドの表示タイミング */
+}
+
+/* 各スライドのアニメーションタイミングを均等にずらす */
+.slideimg:nth-of-type(1){
+  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91.jpg');
+  animation-delay: 0s;
+  background-position:100%;
+}
+
+.slideimg:nth-of-type(2) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/01/flower-13.jpg');
+  animation-delay: 3s;
+  background-position:10%;
+}
+
+.slideimg:nth-of-type(3) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-2.jpg');
+  animation-delay: 6s;
+  background-position:0%;
+}
+
+.slideimg:nth-of-type(4) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/01/appeal-img-2.jpg');
+  animation-delay: 9s;
+  background-position:60%;
+}
+
+.slideimg:nth-of-type(5) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-3.jpg');
+  animation-delay: 12s;
+  background-position:90%;
+}
+
+/* 複数画像切り替え---------------------------------------------- */
+.slider-container {
+  position: relative;
+  width: 1280px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.slideimg {
+  position: absolute;
+  inset: 0;/*親要素内にフルサイズで配置*/
+  opacity: 0;
+  background-size: cover;/* 画像をスライド全体にカバー */
+  animation: slideAnime 15s infinite; /* 15秒で1サイクル */
+}
+
+@keyframes slideAnime {
+  0%, 30%, 100% { opacity: 0; }/* スライドの非表示タイミング */
+  10%, 20% { opacity: 1; }/* スライドの表示タイミング */
+}
+
+/* 各スライドのアニメーションタイミングを均等にずらす */
+.slideimg:nth-of-type(1){
+  background-image: url('channels4_banner.jpg');
+  animation-delay: 0s;
+  background-position:100%;
+}
+
+.slideimg:nth-of-type(2) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/01/flower-13.jpg');
+  animation-delay: 3s;
+  background-position:10%;
+}
+
+.slideimg:nth-of-type(3) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-2.jpg');
+  animation-delay: 6s;
+  background-position:0%;
+}
+
+.slideimg:nth-of-type(4) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/01/appeal-img-2.jpg');
+  animation-delay: 9s;
+  background-position:60%;
+}
+
+.slideimg:nth-of-type(5) {
+  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-3.jpg');
+  animation-delay: 12s;
+  background-position:90%;
+}
+
+ 
+.anim-box.fadein.is-animated {
+  animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+ 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+ 
