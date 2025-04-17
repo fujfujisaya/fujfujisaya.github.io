@@ -23,31 +23,6 @@ img, iframe {
   height: auto;
 }
 
-h2 {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 4rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* スマホ向けサイズ（画面幅768px以下） */
-@media (max-width: 768px) {
-  h2 {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-  text-align: center;
-  }
-}
-
-h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-    text-align: center;
-}
-
 p {
   font-size: 2.5rem;
   line-height: 1.6;
@@ -55,20 +30,10 @@ p {
   text-align: left;
 }
 
-@media (max-width: 768px) {
-  p {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  text-align: left;
-  }
-}
-
 /* ==========================
    ヘッダー
 ========================== */
 header {
-  background-color: #707070;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -82,21 +47,6 @@ header h1 {
   margin: 0;
   font-size: 0; /* テキストがない or imgだけならこれで行間余白を防げます */
   line-height: 1; /* 念のため行間も最小化 */
-}
-
-
-header ima {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  list-style: none;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-top: 10px;
-  padding: 0;
-    text-align: left;
-}
-
-header p img {
- width: 1280px;
 }
 
 /* ==========================
@@ -129,16 +79,6 @@ section:first-child {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-/* スマホ向けサイズ（画面幅768px以下） */
-@media (max-width: 768px) {
-  .about-image img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  }
 }
 
 .about-text {
@@ -370,6 +310,7 @@ margin-right: 40px;
 
 .stamp-card img {
   width: 250px;
+    height: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -382,23 +323,6 @@ margin-right: 40px;
 .stamp-bottan-line {
   text-align: center; /* ボタンとテキスト中央寄せ */
 }
-
-.stamp-button {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 12px 24px;
-  background-color: #000000;
-  color: white;
-  border-radius: 30px;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.stamp-button:hover {
-  background-color: #000000;
-}
-
 
 /* ==========================
    書籍紹介
@@ -429,23 +353,10 @@ margin-right: 40px;
     
 }
 
-.book-item a {
-     margin-bottom: 10px;
-}
-
 .book-item img {
   width: 250px;
   height: 300px;    
 }
-
-/* スマホ向けサイズ（画面幅768px以下） */
-@media (max-width: 768px) {
-  .book-item img {
-    width: 150px;   /* ← 100px小さい */
-    height: 200px;  /* ← 100px小さい */
-  }
-}
-
 
 .book-item h3 {
   font-size: 1.8rem;
@@ -520,27 +431,6 @@ footer ul li span {
     text-align: left;
 }
 
-/* ==========================
-   モバイル対応
-========================== */
-@media (max-width: 768px) {
-  .about .container,
-  .stamp-card,
-  .book-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .book-item {
-    flex: 1 1 100%;
-  }
-}
-
-
 h5 {
   border-bottom: solid 3px #a9a9a9;
   position: relative;
@@ -564,65 +454,51 @@ h5:after {
 
 
 
-/* 複数画像切り替え---------------------------------------------- */
+/* スライダーコンテナ設定 */
 .slider-container {
   position: relative;
   height: 300px;
   overflow: hidden;
-     max-width: 1280px;
+  max-width: 1280px;
 }
 
+/* スライド画像共通スタイル */
 .slideimg {
   position: absolute;
-  inset: 0;/*親要素内にフルサイズで配置*/
+  inset: 0;
   opacity: 0;
-  background-size: cover;/* 画像をスライド全体にカバー */
-  animation: slideAnime 15s infinite; /* 15秒で1サイクル */
+  background-size: cover;
+  background-position: center;
+  animation: slideAnime 9s infinite;
 }
 
+/* アニメーション定義（3枚用） */
 @keyframes slideAnime {
-  0%, 30%, 100% { opacity: 0; }/* スライドの非表示タイミング */
-  10%, 20% { opacity: 1; }/* スライドの表示タイミング */
+  0%, 33.33%, 100% { opacity: 0; }
+  10%, 23.33% { opacity: 1; }
 }
 
-/* 各スライドのアニメーションタイミングを均等にずらす */
-.slideimg:nth-of-type(1){
+/* 各画像の切り替えタイミング */
+.slideimg:nth-of-type(1) {
   background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91.jpg');
   animation-delay: 0s;
-  background-position:100%;
 }
 
 .slideimg:nth-of-type(2) {
   background-image: url('https://turicco.com/wp-content/uploads/2024/01/flower-13.jpg');
   animation-delay: 3s;
-  background-position:10%;
 }
 
 .slideimg:nth-of-type(3) {
   background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-2.jpg');
   animation-delay: 6s;
-  background-position:0%;
-}
- 
-.anim-box.fadein.is-animated {
-  animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-}
- 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
-
+ 
 .slideimg p {
     color: white;/*文字は白に*/
   font-weight: bold; /*太字に*/
   font-size: 6em;/*サイズ2倍*/
-  font-family :Quicksand, sans-serif;/*Google Font*/
   position: absolute;
   top: 50%;
   left: 20%;
@@ -633,68 +509,38 @@ h5:after {
   }
 
 
+
+
+
+
 /* スマホ向けサイズ（画面幅768px以下） */
 @media (max-width: 768px) {
-
-/* 複数画像切り替え---------------------------------------------- */
-.slider-container {
-  position: relative;
-  height: 100px;
-  overflow: hidden;
-     max-width: 768px;
-}
-
-.slideimg {
-  position: absolute;
-  inset: 0;/*親要素内にフルサイズで配置*/
-  opacity: 0;
-  background-size: cover;/* 画像をスライド全体にカバー */
-  animation: slideAnime 15s infinite; /* 15秒で1サイクル */
-}
-
-@keyframes slideAnime {
-  0%, 30%, 100% { opacity: 0; }/* スライドの非表示タイミング */
-  10%, 20% { opacity: 1; }/* スライドの表示タイミング */
-}
-
-/* 各スライドのアニメーションタイミングを均等にずらす */
-.slideimg:nth-of-type(1){
-  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91.jpg');
-  animation-delay: 0s;
-  background-position:100%;
-}
-
-.slideimg:nth-of-type(2) {
-  background-image: url('https://turicco.com/wp-content/uploads/2024/01/flower-13.jpg');
-  animation-delay: 3s;
-  background-position:10%;
-}
-
-.slideimg:nth-of-type(3) {
-  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91-2.jpg');
-  animation-delay: 6s;
-  background-position:0%;
-}
- 
-.anim-box.fadein.is-animated {
-  animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-}
- 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+   .about-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
   }
-  100% {
-    opacity: 1;
+      p {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
   }
-}
-
+    
+  h2 {
+  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: center;
+  }
+    
 
 .slideimg p {
     color: white;/*文字は白に*/
   font-weight: bold; /*太字に*/
-  font-size: 2em;/*サイズ2倍*/
-  font-family :Quicksand, sans-serif;/*Google Font*/
+  font-size: 4em;/*サイズ2倍*/
   position: absolute;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
