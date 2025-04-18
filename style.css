@@ -515,29 +515,451 @@ h5:after {
 
 /* スマホ向けサイズ（画面幅768px以下） */
 @media (max-width: 768px) {
-   .about-image img {
-  width: 150px;
+  
+    /* スライダーコンテナ設定 */
+.slider-container {
+  position: relative;
   height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  }
-      p {
+  overflow: hidden;
+  max-width: 768px;
+}
+    
+    
+p {
   font-size: 2rem;
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: left;
   }
     
-  h2 {
-  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-  text-align: center;
+
+img, iframe {
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+}
+
+
+/* ==========================
+   ヘッダー
+========================== */
+header {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+header h1 {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-size: 0; /* テキストがない or imgだけならこれで行間余白を防げます */
+  line-height: 1; /* 念のため行間も最小化 */
+}
+
+/* ==========================
+   セクション共通
+========================== */
+section {
+  margin: 40px auto 80px;
+  max-width: 960px;
+}
+
+section:first-child {
+  margin-top: 100px;
+}
+
+/* ==========================
+   ABOUT セクション
+========================== */
+.about .container {
+  gap: 40px;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+   .about-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
   }
     
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
 
-.slideimg p {
+    
+
+/* ==========================
+   自己紹介セクション
+========================== */
+#intro .container {
+  background-color: #eeeeee;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+
+#intro .syoukai p {
+    margin-top: 20px;
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+    margin-left:80px;
+    margin-right: 80px;
+}
+
+#intro .syoukai p2 {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
+    margin-left:80px;
+    margin-right: 80px;
+}
+
+#intro .syoukai {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#intro .syoukai img {
+  max-width: 600px;
+    max-width: 500px
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* ==========================
+   SNSリンク
+========================== */
+.sns-links {
+  text-align: center;
+  padding: 30px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.sns-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.sns-links li {
+  flex: 0 0 calc(50% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0 10px;
+}
+
+.sns-links li a {
+  display: flex;
+  align-items: center;        /* ← 縦方向に中央揃え */
+  gap: 10px;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #333;
+  line-height: 1;
+  height: 100%;               /* liと同じ高さに */
+}
+
+.sns-links li a img {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  object-fit: cover;          /* ← 中身が潰れない */
+  display: block;             /* ← inline-blockの余白防止 */
+}
+
+
+/* ==========================
+   YouTubeセクション
+========================== */
+/* YouTubeセクション */
+
+section ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* ← ここもcenterから変更推奨 */
+  gap: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+
+section ol li {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  section ol li {
+    width: 100%;
+  }
+}
+
+
+/* YouTube埋め込みサイズを16:9で維持 */
+section ol li iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* タイトル・説明文の整え */
+section ol li h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+section ol li p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* iframe埋め込みのラッパー（16:9を維持） */
+
+
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9の比率 */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+      background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.Recommended-YouTube {
+  text-align: center;
+  padding: 30px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+/* ==========================
+   地図セクション
+========================== */
+
+.map-section {
+  text-align: center;
+  padding: 30px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 200px;
+}
+
+/* ==========================
+   LINEスタンプセクション
+========================== */
+.line-stamp {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.line-stamp h3{
+    margin-left: 40px;
+margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+.stamp-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.stamp-card img {
+  width: 250px;
+    height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stamp-text {
+  max-width: 500px;
+  text-align: left; /* ボタンとテキスト中央寄せ */
+}
+
+.stamp-bottan-line {
+  text-align: center; /* ボタンとテキスト中央寄せ */
+}
+
+/* ==========================
+   書籍紹介
+========================== */
+.books {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.book-item {
+  flex: 0 0 calc(33.33333% - 30px); /* ★ 2列に収まるように調整 */
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+    align-items: center; 
+    
+}
+
+.book-item img {
+  width: 250px;
+  height: 300px;    
+}
+
+.book-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.book-item p {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.book-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5rem;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+  margin-top: auto;
+    max-height: 50px;
+    max-width: 180px;
+    
+}
+
+.book-button:hover {
+  background-color: #000000;
+}
+
+/* ==========================
+   フッター
+========================== */
+footer {
+  background-color: #707070;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+footer p {
+  font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  list-style: none;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 0;
+    text-align: left;
+}
+
+footer ul {
+  list-style: none;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 0;
+    text-align: left;
+}
+
+footer ul li span {
+  list-style: none;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 0;
+    text-align: left;
+}
+
+h5 {
+  border-bottom: solid 3px #a9a9a9;
+  position: relative;
+          font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+          font-size: 2rem;
+  font-weight: 200;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #000000;
+  bottom: -3px;
+  width: 20%;
+}
+
+    .slideimg p {
     color: white;/*文字は白に*/
   font-weight: bold; /*太字に*/
   font-size: 4em;/*サイズ2倍*/
@@ -547,5 +969,7 @@ h5:after {
   transform: translate(-50%,-50%);
   /*文字の装飾は省略*/
   }
+    
+
 }
  
