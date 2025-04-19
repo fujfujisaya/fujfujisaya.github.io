@@ -560,12 +560,12 @@ section:first-child {
 /* ==========================
    ABOUT セクション
 ========================== */
+/*
   .about .container {
     display: flex;
-    flex-direction: column; /* 横並び → 縦並び */
-    align-items: center;     /* 横幅中央に */
-    text-align: center;      /* （任意）中央揃え */
+    flex-direction: column;  横並び → 縦並び  
   }
+*/
 
    .about-image img {
   width: 150px;
