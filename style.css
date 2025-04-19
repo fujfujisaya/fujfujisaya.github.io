@@ -500,7 +500,7 @@ h5:after {
 
 /* 各画像の切り替えタイミング */
 .slideimg:nth-of-type(1) {
-  background-image: url('https://turicco.com/wp-content/uploads/2024/09/img91.jpg');
+  background-image: url('mqdefault_6s.jpeg');
   animation-delay: 0s;
 }
 
