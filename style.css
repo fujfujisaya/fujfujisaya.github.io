@@ -84,14 +84,6 @@ section:first-child {
   border-radius: 30px;
   padding: 30px;
   }
-    
-    .about-image img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-    
 }
 
 .about-image img {
@@ -99,6 +91,15 @@ section:first-child {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+.about-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+} 
 }
 
 .about-text {
@@ -869,23 +870,6 @@ footer ul li span {
     text-align: left;
 }
 
-h5 {
-  border-bottom: solid 3px #a9a9a9;
-  position: relative;
-          font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-          font-size: 2rem;
-    margin-bottom: 3px;
-    text-align: center;
-}
-
-h5:after {
-  position: absolute;
-  content: " ";
-  display: block;
-  border-bottom: solid 3px #000000;
-  bottom: -3px;
-  width: 20%;
-} 
 
 }
  
