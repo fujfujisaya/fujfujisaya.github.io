@@ -498,7 +498,7 @@ h5:after {
 .slideimg p {
   color: white;
   font-weight: bold;
-  font-size: clamp(1.2rem, 2vw, 5rem); /* 最小1.2rem, 通常2vw, 最大2.5rem */
+  font-size: clamp(2rem, 3vw, 5rem); /* 最小1.2rem, 通常2vw, 最大2.5rem */
   position: absolute;
   top: 50%;            /* 縦中央 */
   left: 10%;         /* 右端から10px内側 */
@@ -558,14 +558,12 @@ section:first-child {
 /* ==========================
    ABOUT セクション
 ========================== */
-.about .container {
-    display: flex; 
-  background-color: #eeeeee;
-  border-radius: 30px;
-  padding: 30px;
-    flex-direction: column; /* ← 横並びから縦並びに変更 */
-    align-items: center;     /* ← 中央寄せに調整（任意） */
-}
+  .about .container {
+    display: flex;
+    flex-direction: column; /* 横並び → 縦並び */
+    align-items: center;     /* 横幅中央に */
+    text-align: center;      /* （任意）中央揃え */
+  }
 
    .about-image img {
   width: 150px;
@@ -573,12 +571,10 @@ section:first-child {
   border-radius: 50%;
   object-fit: cover;
   }
-    
-.about-text {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-}
+      .about-text {
+    min-width: auto;        /* スマホで幅に余白ができないように調整 */
+    text-align: center;     /* （任意）中央揃え */
+  }
 
     
 
