@@ -457,9 +457,9 @@ h5:after {
 /* スライダーコンテナ設定 */
 .slider-container {
   position: relative;
-  height: 300px;
+  width: 100%;               /* 横幅いっぱい */
+  aspect-ratio: 5 / 1;       /* 横:縦 = 4:1（高さは自動で1/4になる） */
   overflow: hidden;
-  max-width: 1280px;
 }
 
 /* スライド画像共通スタイル */
@@ -496,35 +496,20 @@ h5:after {
 
  
 .slideimg p {
-    color: white;/*文字は白に*/
-  font-weight: bold; /*太字に*/
-  font-size: 6em;/*サイズ2倍*/
+  color: white;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 2vw, 5rem); /* 最小1.2rem, 通常2vw, 最大2.5rem */
   position: absolute;
-  top: 50%;
-  left: 20%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  /*文字の装飾は省略*/
-  }
-
-
-
+  top: 50%;            /* 縦中央 */
+  left: 10%;         /* 右端から10px内側 */
+  transform: translateY(-50%); /* 縦方向だけ中央に調整 */
+}
 
 
 
 ///////////* スマホ向けサイズ（画面幅768px以下） */
 @media (max-width: 768px) {
-  
-    /* スライダーコンテナ設定 */
-.slider-container {
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-  max-width: 100%;
-}
-    
-    
+      
 p {
   font-size: 2rem;
   line-height: 1.6;
@@ -966,8 +951,6 @@ h5:after {
   font-weight: bold; /*太字に*/
   font-size: 2em;/*サイズ2倍*/
   position: absolute;
-  top: 50%;
-  left: 10%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
