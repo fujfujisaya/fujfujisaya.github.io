@@ -74,6 +74,13 @@ section:first-child {
   padding: 30px;
 }
 
+/* スマホでは縦並びに切り替え */
+@media (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+  }
+}
+
 .about-image img {
   width: 250px;
   height: 250px;
@@ -581,11 +588,13 @@ section:first-child {
 /* ==========================
    自己紹介セクション
 ========================== */
+/*
 #intro .container {
   background-color: #eeeeee;
   padding: 30px;
   border-radius: 30px;
 }
+*/
 
 
 #intro .syoukai p {
@@ -594,8 +603,8 @@ section:first-child {
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: center;
-    margin-left:80px;
-    margin-right: 80px;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 #intro .syoukai p2 {
@@ -603,8 +612,8 @@ section:first-child {
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: left;
-    margin-left:80px;
-    margin-right: 80px;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 #intro .syoukai {
