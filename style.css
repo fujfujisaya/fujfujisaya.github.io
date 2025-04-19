@@ -464,6 +464,17 @@ h5 {
     text-align: center;
 }
 
+/* スマホでは縦並びに切り替え */
+@media (max-width: 768px) {
+  border-bottom: solid 3px #a9a9a9;
+  position: relative;
+          font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+          font-size: 2rem;
+  font-weight: 200;
+    text-align: center;
+  }
+
+
 h5:after {
   position: absolute;
   content: " ";
