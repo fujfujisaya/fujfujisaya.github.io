@@ -458,7 +458,7 @@ h5:after {
 .slider-container {
   position: relative;
   width: 100%;               /* 横幅いっぱい */
-  aspect-ratio: 5 / 1;       /* 横:縦 = 4:1（高さは自動で1/4になる） */
+  aspect-ratio: 4 / 1;       /* 横:縦 = 4:1（高さは自動で1/4になる） */
   overflow: hidden;
 }
 
@@ -533,19 +533,20 @@ header {
   margin: 0 auto;
 }
 
-header h1 {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  font-size: 0; /* テキストがない or imgだけならこれで行間余白を防げます */
-  line-height: 1; /* 念のため行間も最小化 */
-}
+/*header h1 {*/
+/*  height: 30px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  padding: 0;*/
+/*  margin: 0;*/
+/*  font-size: 0;  テキストがない or imgだけならこれで行間余白を防げます */
+/*  line-height: 1;  念のため行間も最小化 */
+/*}*/
 
 /* ==========================
    セクション共通
 ========================== */
+/*
 section {
   margin: 40px auto 80px;
   max-width: 960px;
@@ -554,6 +555,7 @@ section {
 section:first-child {
   margin-top: 100px;
 }
+*/
 
 /* ==========================
    ABOUT セクション
@@ -575,8 +577,6 @@ section:first-child {
     min-width: auto;        /* スマホで幅に余白ができないように調整 */
     text-align: center;     /* （任意）中央揃え */
   }
-
-    
 
 /* ==========================
    自己紹介セクション
@@ -621,59 +621,6 @@ section:first-child {
   border-radius: 8px;
   margin-bottom: 16px;
 }
-
-/* ==========================
-   SNSリンク
-========================== */
-.sns-links {
-  text-align: center;
-  padding: 30px;
-  background-color: #eeeeee;
-  border-radius: 10px;
-}
-
-.sns-links ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.sns-links li {
-  flex: 0 0 calc(50% - 20px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  padding: 0 10px;
-}
-
-.sns-links li a {
-  display: flex;
-  align-items: center;        /* ← 縦方向に中央揃え */
-  gap: 10px;
-  font-size: 1.8rem;
-  text-decoration: none;
-  color: #333;
-  line-height: 1;
-  height: 100%;               /* liと同じ高さに */
-}
-
-.sns-links li a img {
-  width: 35px;
-  height: 35px;
-  border-radius: 10px;
-  object-fit: cover;          /* ← 中身が潰れない */
-  display: block;             /* ← inline-blockの余白防止 */
-}
-
 
 /* ==========================
    YouTubeセクション
@@ -940,19 +887,7 @@ h5:after {
   border-bottom: solid 3px #000000;
   bottom: -3px;
   width: 20%;
-}
-
-    .slideimg p {
-    color: white;/*文字は白に*/
-  font-weight: bold; /*太字に*/
-  font-size: 2em;/*サイズ2倍*/
-  position: absolute;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  /*文字の装飾は省略*/
-  }
-    
+} 
 
 }
  
