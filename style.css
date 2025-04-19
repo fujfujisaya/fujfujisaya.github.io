@@ -30,6 +30,16 @@ p {
   text-align: left;
 }
 
+/* スマホでは縦並びに切り替え */
+@media (max-width: 768px) {
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+  }
+
 /* ==========================
    ヘッダー
 ========================== */
@@ -101,6 +111,15 @@ section:first-child {
   min-width: 300px;
   text-align: left;
 }
+
+/* スマホでは縦並びに切り替え */
+@media (max-width: 768px) {
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+  }
 
 
 /* ==========================
@@ -451,7 +470,6 @@ h5 {
   position: relative;
           font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
           font-size: 4rem;
-  font-weight: 400;
     margin-bottom: 30px;
     margin-left: 100px;
     margin-right: 100px;
@@ -461,11 +479,10 @@ h5 {
 /* スマホでは縦並びに切り替え */
 @media (max-width: 768px) {
 h5 {
-  border-bottom: solid 3px #a9a9a9;
-  position: relative;
-          font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-          font-size: 2rem;
-  font-weight: 200;
+    font-size: 2.2rem;             /* 少し小さめに */
+    margin-left: 10px;             /* 左右余白を縮める */
+    margin-right: 10px;
+    font-weight: 300;
     text-align: center;
   }
 }
