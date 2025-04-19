@@ -519,9 +519,9 @@ h5:after {
     /* スライダーコンテナ設定 */
 .slider-container {
   position: relative;
-  height: 100px;
+  height: 50px;
   overflow: hidden;
-  max-width: 768px;
+  max-width: 100%;
 }
     
     
