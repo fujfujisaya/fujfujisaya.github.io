@@ -33,7 +33,7 @@ p {
 /* スマホでは縦並びに切り替え */
 @media (max-width: 768px) {
 p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: center;
@@ -101,8 +101,8 @@ section:first-child {
 
 @media (max-width: 768px) {
 .about-image img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 } 
 }
 
@@ -111,16 +111,6 @@ section:first-child {
   min-width: 300px;
   text-align: left;
 }
-
-/* スマホでは縦並びに切り替え */
-@media (max-width: 768px) {
-.about-text {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-}
-  }
-
 
 /* ==========================
    自己紹介セクション
