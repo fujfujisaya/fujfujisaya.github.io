@@ -77,7 +77,14 @@ section:first-child {
 /* スマホでは縦並びに切り替え */
 @media (max-width: 768px) {
   .about .container {
+        display: flex;
     flex-direction: column;
+        align-items: center;
+  justify-content: center;
+        gap: 40px;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  padding: 30px;
   }
 }
 
@@ -882,10 +889,7 @@ h5 {
   position: relative;
           font-family: "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
           font-size: 2rem;
-  font-weight: 200;
     margin-bottom: 3px;
-    margin-left: 10px;
-    margin-right: 10px;
     text-align: center;
 }
 
